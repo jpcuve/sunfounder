@@ -2,8 +2,17 @@
 #include <gtkmm/enums.h>
 #include <gtkmm/application.h>
 #include "LEDWindow.h"
+#include <wiringPi.h>
+
+extern "C" {
+	int wiringPiSetup();
+}
 
 int main(int argc, char *argv[]) {
+	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
+		printf("setup wiringPi failed !");
+		return 1; 
+	}
     std::cout << "Hello, World!" << std::endl;
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.hello");
     LEDWindow mainWindow;
