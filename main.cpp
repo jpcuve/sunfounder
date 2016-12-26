@@ -3,6 +3,7 @@
 #include <gtkmm/application.h>
 #include "LEDWindow.h"
 #include "BtnAndLedWindow.h"
+#include "RgbLedWindow.h"
 #include <wiringPi.h>
 
 extern "C" {
@@ -16,7 +17,7 @@ int main(int argc, char *argv[]) {
 	}
     std::cout << "Hello, World!" << std::endl;
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.hello");
-    BtnAndLedWindow mainWindow;
+    RgbLedWindow mainWindow;
     mainWindow.set_position(Gtk::WindowPosition::WIN_POS_CENTER);
     mainWindow.show_all();
     return app->run(mainWindow);

@@ -10,6 +10,6 @@ link_directories(${GTKMM_LIBRARY_DIRS})
 # Add other flags to the compiler
 add_definitions(${GTKMM_CFLAGS_OTHER})
 
-set(SOURCE_FILES main.cpp LEDWindow.cpp LEDWindow.h wiringPoMockup.c BtnAndLedWindow.cpp BtnAndLedWindow.h Gpio.cpp Gpio.h)
+set(SOURCE_FILES main.cpp LEDWindow.cpp LEDWindow.h wiringPoMockup.c BtnAndLedWindow.cpp BtnAndLedWindow.h Gpio.cpp Gpio.h RgbLedWindow.cpp RgbLedWindow.h)
 add_executable(sunfounder ${SOURCE_FILES})
 target_link_libraries(sunfounder ${GTKMM_LIBRARIES})
