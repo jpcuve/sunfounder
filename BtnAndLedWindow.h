@@ -14,6 +14,8 @@ class BtnAndLedWindow: public Gtk::Window {
 private:
     Gtk::Label m_label;
     sigc::connection m_timer;
+    int m_state;
+    void setState(int);
 public:
     BtnAndLedWindow();
     ~BtnAndLedWindow();
