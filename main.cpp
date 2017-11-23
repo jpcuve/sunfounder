@@ -6,10 +6,6 @@
 #include "RgbLedWindow.h"
 #include <wiringPi.h>
 
-extern "C" {
-	int wiringPiSetup();
-}
-
 int main(int argc, char *argv[]) {
 	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
 		printf("setup wiringPi failed !");
@@ -17,7 +13,7 @@ int main(int argc, char *argv[]) {
 	}
     std::cout << "Hello, World!" << std::endl;
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.hello");
-    RgbLedWindow mainWindow;
+    BtnAndLedWindow mainWindow;
     mainWindow.set_position(Gtk::WindowPosition::WIN_POS_CENTER);
     mainWindow.show_all();
     return app->run(mainWindow);
